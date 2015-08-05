@@ -38,18 +38,18 @@ exports.show = function(req, res){
 //GET /quizes/:id/answer
 exports.answer = function(req, res){
         var resultado = 'Incorrecto';
-        if (req.query.respuesta.toLowerCase() === req.quiz.respuesta.toLowerCase()) {
+        if (req.query.respuesta === req.quiz.respuesta) {
             resultado = 'Correcto';
         }
 
         res.render('quizes/answer', {quiz: req.quiz, respuesta: resultado, errors: []});
 };
 
+
 // GET /quizes/new
 exports.new = function(req, res) {
-  var quiz = models.Quiz.build( // crea objeto quiz
-    {pregunta: "Pregunta", respuesta: "Respuesta", tema: "otro"}
-  );
+  // crea objecto quiz
+  var quiz = models.Quiz.build({pregunta: "Pregunta", respuesta: "Respuesta", tema: "otro"});
 
   res.render('quizes/new', {quiz: quiz, errors: []});
 };
