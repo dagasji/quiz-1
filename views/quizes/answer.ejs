@@ -6,11 +6,14 @@
         <title>Quiz</title>
     </head>
     <body>
-        <h2>Quiz: el juego de las preguntas </h2>
-            <p>
-                <%= respuesta %>
-                <a href="/quizes/<%= quiz.id %>"> Volver </a>
-            </p>
+        <h4> Resultado: </h4>
+			<p><h2><%= respuesta %></h2></p>
+
+			<% if( respuesta === 'Correcto'){%>
+				<a href="/quizes">Volver al listado de Preguntas</a>
+			<%}else{%>
+				<a href="/quizes/<%= quiz.id %>"> Reintentar</a>
+			<%}%>
 
     </body>
 </html>

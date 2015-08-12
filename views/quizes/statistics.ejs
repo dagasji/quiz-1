@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"><title>Quiz</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+	</head>
+
+
+
+	<body>
+
+		<fieldset>
+			<legend>Estadísticas</legend>
+				<ul>
+				 <li>Total Preguntas:  <%=statistics.questions%></li>
+				 <li>Total Comentario: <%=statistics.comments%></li>
+				 <li>Media de comentarios por pregunta:
+				 			<%= statistics.questions?(statistics.comments / statistics.questions)
+				 			.toFixed(2):0 %></li>
+				 <li>Pendientes de Aprovación: <%=statistics.unpublished%></li>
+		         <li>Comentarios Aprovados: <%=statistics.published%></li>
+		        </ul>
+        </fieldset>
+
+	</body>
+</html>

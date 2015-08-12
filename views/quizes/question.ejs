@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="/stylesheets/style.css" />
-        <title>Quiz</title>
-    </head>
-    <body>
-        <h2>Quiz: el juego de las preguntas </h2>
-        <div id="buscar-preguntas">
-		<form method="get" action="/quizes">
-		<label for="search">Buscador</label>
-		<input type="text" id="search" name="search" placeholder="Busca tu pregunta" />
-		<input type="submit" value="Buscar" />
-		</form></div>
+	<head>
+		<meta charset="utf-8"><title>Quiz</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<h2> Prueba Suerte</h2>
 
-		<form method="get" action="/quizes/answer">
-		<p>Pregunta: <%= pregunta %></p>
-		<input type="text" name="respuesta" placeholder="Responda aquí" />
-		<input type="submit" value="Enviar">
+		<form method ="get" action="/quizes/answer">
+			Pregunta: <%= pregunta %> <p>
+			<input type="text" name="respuesta" value="Responda aquí" />
+			<input type="submit" value="Enviar">
 		</form>
-    </body>
+
+	</body>
 </html>
